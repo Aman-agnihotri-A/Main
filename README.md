@@ -1,2 +1,5 @@
 # Main
 Automated Student Allocation Software (For Colleges)
+It consist of various manual functions performed by the insititution to manually conduct the exams. those all maual work is now converted into the automated software created using python with Eel framework, Which basically converts the given html page into a GUI template and acts as an host server, It also allows python to directly interact with javascript to pull verious information from the html pages and the python then perform the backend function. Python here uses the Sqlite3 to keep the database of the various students and teacher as well as the number of rooms which are available to conduct the exam.
+
+  The next part of the code consist of the Teachers module where we assign the teachers to various rooms which are already alloted to the students and then it gives back  an csv file which consist of the schedule for the teachers , Here the program randomly assigns the teachers to the room but I am working on making a check that the teachers who teachs a paritcular subject dont get duty in a room in which exam for the same subject is goin on.
