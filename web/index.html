@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset = "UTF-8">
+      <title>Exam Scheduler version v 0.0.1  </title>
+     
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+      
+    </head>
+    
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+     <link rel = "stylesheet" tyle="style.css"
+         href = "./node_modules/bootstrap/dist/css/bootstrap.min.css" />
+         <script src="/eel.js"></script>
+       
+   
+   <body>
+       <div id="blogin">
+    <!-- Default form register -->
+<form class="text-center border border-light p-5" action="alert('hello')">
+
+   <p class="h4 mb-4">Exam Scheduler</p>
+   <div class="container">
+   <img src="C:\Users\91883\Documents\My_project1\images.png" class="float-centre">
+   </div>
+   
+   <hr>
+   <br>
+   <br>
+   <br>
+
+   <div class="form-row mb-4" >
+       <div class="col">
+           
+            <input type="text" id="Username" class="form-control" placeholder="Username" required>
+            
+       </div>
+       <br>
+       <div class="col">
+           
+           
+       </div>
+   </div>
+
+   <!-- E-mail -->
+    <!-- Password -->
+   <div class="form-row mb-4">
+      <div class="col">
+          <!-- First name -->
+           
+          <input type="password" id="passwd" class="form-control" placeholder="Password" required>
+            
+      </div>
+      <div class="col">
+            
+          
+      </div>
+  </div>
+
+  <div class="form-row mb-4">
+      <div class="col">
+   <button class="btn btn-info my-4 btn-block" type="button" onclick="dim()">Login</button>
+</div>
+<div class="col">
+        <button class="btn btn-info my-4 btn-block" type="button" onclick="">Forgot password</button>
+     </div>
+</div>
+ <br><br>
+<br>
+<br>
+<br>
+   <hr>
+
+   <!-- Terms of service -->
+   <footer> AMC exam prototype © </footer>
+
+
+</form>
+</div>
+<div id="alogin">
+    <br>
+    <p class="h4 mb-4" style="text-align: center;color:slategray;">Exam Scheduler Menu</p>
+
+    <hr>
+    <form class="text-center border border-light p-5" >
+        <div class="form-row mb-4">
+                <div class="col">
+             <button class="btn btn-info my-4 btn-block" type="button" onclick="create()">CREATE DATABASE (For First Run )</button>
+          </div>
+          <div class="col">
+                  <button class="btn btn-info my-4 btn-block" type="button" onclick="mass_load_student()">STUDENT LOAD (CSV)</button>
+               </div>
+          </div>
+          <div class="form-row mb-4">
+                <div class="col">
+             <button class="btn btn-info my-4 btn-block" type="button" onclick="mass_load_teach()">TEACHER LOAD (CSV)</button>
+          </div>
+          <div class="col">
+                  <button class="btn btn-info my-4 btn-block" type="button" onclick="mass_load_room()">ROOMS LOAD (CSV)</button>
+               </div>
+          </div>
+          <div class="form-row mb-4">
+                <div class="col">
+             <button class="btn btn-info my-4 btn-block" type="button" onclick="insert()">INSERT SINGLE TEACHER</button>
+          </div>
+          <div class="col">
+                  <button class="btn btn-info my-4 btn-block" type="button" onclick="d()">DELETE TEACHER DATA</button>
+               </div>
+          </div>
+          <div class="form-row mb-4">
+                <div class="col">
+             <button class="btn btn-info my-4 btn-block" type="button" onclick="assign_room()">ASSIGN ROOMS</button>
+          </div>
+          <div class="col">
+                  <button class="btn btn-info my-4 btn-block" type="button" onclick="random_teacher()">GET TEACHER SCHEDULE(6 days)</button>
+               </div>
+          </div>
+          <div class="form-row mb-4">
+                <button class="btn btn-info my-4 btn-block" type="button" onclick="simp()">LOGOUT</button>
+             </div>
+
+
+        </form>
+</div>
+
+        <div class="container" id=insert>
+         <h2>INSERT TEACHER DETAILS.</h2>
+         <form class="text-center border border-light p-5" >
+            <div class="form-group">
+               <label for="uname" class="md-2 mr-md-2">TEACHER_ID:</label>
+               <input type="text" class="form-control mb-2 mr-md-2" id="id" placeholder="Enter TEACHER_ID"  required>
+            </div>
+            <div class="form-group">
+               <label >FIRST NAME:</label>
+               <input type="text" class="form-control" id="fname" placeholder="Enter FIRST NAME"  required>
+            </div>
+            <div class="form-group">
+               <label for="uname">LAST_NAME:</label>
+               <input type="text" class="form-control" id="lname" placeholder="Enter LAST NAME"  required>
+            </div>
+            <div class="form-group">
+               <label for="uname">COLLEGE ID:</label>
+               <input type="text" class="form-control" id="cid" placeholder="Enter COLLEGE_ID AS AMC_001"  required>
+            </div>
+            <div class="row">
+               <div class="col">
+                 <button class="btn btn-danger form-control  btn-block" routerLink='/login' onclick="back()">BACK</button></div>
+               <div class="col">
+                 <button id="btnSubmit" class="btn btn-primary form-control btn-block" type="submit" (click)="onSubmit()"
+                 onclick="ins()">INSERT</button></div>
+                 </div>
+             </div>
+         
+         </form>
+        </div>
+        <div class="container" id=delete>
+            <h2>ENTER TEACHER ID TO DELETE THE RECORD.</h2>
+            <form class="text-center border border-light p-5" >
+                  <div class="form-group">
+                        <label for="uname" class="md-2 mr-md-2">TEACHER_ID:</label>
+                        <input type="text" class="form-control mb-2 mr-md-2" id="tid" placeholder="Enter TEACHER_ID"  required>
+                     </div>
+                     <div class="row">
+                           <div class="col">
+                             <button class="btn btn-danger form-control  btn-block" routerLink='/login' onclick="bac()">BACK</button></div>
+                           <div class="col">
+                             <button id="btnSubmit" class="btn btn-primary form-control btn-block" type="submit" (click)="onSubmit()"
+                             onclick="del()">DELETE</button></div>
+                             </div>
+
+                         </div>
+
+            </form>
+
+        </div>
+
+
+
+   </body>
+   <script src = "view.js" ></script>
+
+   
+   </html>
